@@ -9,6 +9,10 @@
 
     time.timeZone = "America/Toronto";
 
+    environment.systemPackage = [
+      pkgs.git
+    ];
+
     # configure auto-update flake timers
     systemd.timers."update-flake" = {
       wantedBy = [ "timers.target" ];
