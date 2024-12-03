@@ -12,7 +12,7 @@
   networking.hostName = "netbox";
 
   groups.sysadmin.enable = true;
-  groups.niveau3.enable = false;
+  groups.niveau3.enable = true;
 
   system.stateVersion = "25.05"; # Did you read the comment?
 
