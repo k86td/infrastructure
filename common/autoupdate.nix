@@ -4,7 +4,7 @@ let
 in
 {
   options = {
-    cfg = {
+    services.autoUpdateFlake = {
       enable = lib.mkEnableOption "Create a timer to automatically update system using a flake";
       flakePath = lib.mkOption {
         type = lib.types.path;
