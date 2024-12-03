@@ -30,6 +30,9 @@
       script = ''
         set -eu
         pushd /etc/nixos
+
+        export PATH=${pkgs.git}/bin:$PATH
+
         ${pkgs.git}/bin/git fetch
 
         current_branch=$(${pkgs.git}/bin/git rev-parse --abbrev-ref HEAD)
@@ -46,7 +49,7 @@
         if [ "$local_commit" != "$remote_commit" ]; then
           ${pkgs.coreutils}/bin/echo "found upstream changes. updating..."
           ${pkgs.git}/bin/git pull
-          /run/current-system/sw/bin/nixos-rebuild switch --flake /etc/nixos#netbox
+          nixos-rebuild switch --flake /etc/nixos#netbox
         else
           ${pkgs.coreutils}/bin/echo "up to date."
         fi
