@@ -9,7 +9,7 @@
 
     time.timeZone = "America/Toronto";
 
-    environment.systemPackage = [
+    environment.systemPackages = [
       pkgs.git
     ];
 
