@@ -7,8 +7,8 @@ in
     services.autoUpdateFlake = {
       enable = lib.mkEnableOption "Create a timer to automatically update system using a flake";
       flakePath = lib.mkOption {
-        type = lib.types.path;
-        default = /etc/nixos;
+        type = lib.types.str;
+        default = "/etc/nixos";
         description = "The path where the flake is saved";
       };
       flakeTarget = lib.mkOption {
