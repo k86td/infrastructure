@@ -41,6 +41,8 @@
 
         if [ "$local_commit" != "$remote_commit" ]; then
           ${pkgs.coreutils}/bin/echo "found upstream changes. updating..."
+          ${pkgs.git}/bin/git pull
+          /run/current-system/sw/bin/nixos-rebuild switch --flake /etc/nixos#netbox
         else
           ${pkgs.coreutils}/bin/echo "up to date."
         fi
