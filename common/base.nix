@@ -46,6 +46,7 @@
         else
           ${pkgs.coreutils}/bin/echo "up to date."
         fi
+        popd
       '';
     };
   };
