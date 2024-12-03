@@ -19,6 +19,7 @@
   services.autoUpdateFlake = {
     enable = true;
     flakeTarget = "netbox";
+    interval = "1m";
   };
 
 }
